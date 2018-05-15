@@ -1,42 +1,102 @@
+html {
+	--main-color: #212121;
+	--header-color: #efefef;
+	--bg-color: #fdfdfd;
+}
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 17px;
 	color: #333;
-	line-height: 1.2em;
+}
+
+h1 {
+	margin: 0;
+	padding: 20px 15px;
 }
 
 body {
-	background-color: #fdfdfd;
+	background-color: var(--bg-color);
 	margin: 0;
 	position:relative;
 	min-height: 100vh;
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-gap: 5px;
 	font-family: 'Montserrat', Arial, sans-serif;
-}
-
-header {
-	margin: 0;
-	padding: 0;
-	grid-column: 1/ -1;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 5px;
 }
 
 nav {
 	margin: 0;
+	padding: 0;
 	background-color: #3c3c3c;
-	height: 8%;
+	height: 8vh;
+}
+
+header {
+	grid-column: 1/ -1;
 }
 
 nav a {
-	color: #efefef;
+	color: var(--header-color);
 	text-decoration: none;
+	margin: none;
+	padding: none;
+}
 
+#content-container {
+	/* display: grid;
+	grid-template-columns: repeat(4 1fr);
+	grid-auto-rows: auto; */
 }
 
 /* ====================== Map ====================== */
 #map {
   height: 40vh;
-  width: 100%;
+  width: 100vw;
   background-color: #ccc;
+}
+
+/* =================== Fileter Options ================*/
+.filter-options {
+	background-color: #4DA0E3;
+	color: var(--header-color);
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(4 1fr);
+	grid-auto-rows: auto;
+	grid-gap: 10px;
+}
+
+.filter-options h2 {
+	font-size: 1.4em;
+	margin: 0.5em;
+	grid-column: 1 / -1;
+}
+
+.filter-options select {
+	border: none;
+	font-size: 1.3rem;
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: #074481;
+	color: var(--header-color);
+	grid-column: span 2;
+}
+
+/* ================ Footer ====================*/
+#footer {
+  background-color: #444;
+  color: var(--header-color);
+	margin: 0;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
 }
