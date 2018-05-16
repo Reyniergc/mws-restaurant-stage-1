@@ -41,7 +41,7 @@ body {
 nav {
 	margin: 0;
 	padding: 0;
-	background-color: #3c3c3c;
+	background-color: #333;
 }
 
 nav h1 {
@@ -108,6 +108,7 @@ main {
 	grid-column: 1 / -1;
 	font-size: 1.4em;
 	margin: 0.5em;
+	color: white;
 }
 
 .filter-options select {
@@ -156,6 +157,7 @@ main {
 	margin-bottom: 20px;
 	padding: 10px;
 	border: 2px solid #ccc;
+		list-style-type: none;
 }
 
 #restaurants-list li > a {
@@ -170,6 +172,12 @@ main {
 	margin: 4px 2px;
 	cursor: pointer;
 	border: 2px solid #074481;
+}
+
+#restaurants-list li > a:hover {
+	background-color: #074481;
+	color: #fefefe;
+	transition: 0.5s;
 }
 
 @media screen and (max-width: 425px) {
