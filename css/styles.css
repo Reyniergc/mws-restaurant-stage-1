@@ -79,8 +79,6 @@ main {
 	grid-column: span 2;
 }
 
-
-
 /* ====================== Map ====================== */
 #map-container {
 	grid-column: 1 / -1;
@@ -188,4 +186,84 @@ main {
 	#restaurants-list li {
 		grid-column: 1fr;
 	}
+}
+
+/* ================ Restaurant Pages =================*/
+
+#restaurant-container {
+	padding: 10px;
+	background-color: #4E9FE3;
+}
+
+#restaurant-container h1,
+#restaurant-container p,
+#restaurant-container table {
+	color: #efefef;
+}
+
+#restaurant-cuisine {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+#reviews-container {
+	grid-column: 2 / -1;
+	margin-bottom: 90px;
+	padding: 10px;
+}
+
+#reviews-container h1 {
+	color: #4E9FE3;
+}
+
+#reviews-container ul {
+	list-style-type: none;
+}
+
+#reviews-container ul > li {
+	background-color: #eee;
+	border: 2px solid #ccc;
+	border-radius: 15px;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+
+#reviews-container ul > li p:first-child {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+/* ================= breadcrumbs ======================*/
+
+#breadcrumb {
+    padding: 10px 40px 16px;
+    list-style: none;
+    background-color: #eee;
+    font-size: 17px;
+    margin: 0;
+		grid-column: 1 / -1;
+}
+
+/* Display list items side by side */
+#breadcrumb li {
+    display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+#breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+#breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+#breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
 }
