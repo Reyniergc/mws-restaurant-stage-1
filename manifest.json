@@ -1,0 +1,15 @@
+{
+  "short_name": "Restaurants App",
+  "name": "Restaurants App",
+  "icons": [
+    {
+      "src":"",
+      "sizes": "",
+      "type": ""
+    }
+  ],
+  "start_url": "",
+  "background_color": "#efefef",
+  "Theme_color": "#074481",
+  "display": "standalone"
+}
