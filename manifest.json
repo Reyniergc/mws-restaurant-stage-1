@@ -3,9 +3,9 @@
   "name": "Restaurants App",
   "icons": [
     {
-      "src":"",
-      "sizes": "",
-      "type": ""
+      "src":"./rest-ico.png",
+      "sizes": "550px",
+      "type": "PNG"
     }
   ],
   "start_url": "",

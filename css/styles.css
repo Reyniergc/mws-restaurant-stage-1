@@ -217,7 +217,7 @@ main {
 }
 
 #reviews-container {
-	grid-column: 2 / -1;
+	grid-column: 1 / -1;
 	margin-bottom: 90px;
 	padding: 10px;
   display: grid;
@@ -226,6 +226,7 @@ main {
 
 #reviews-container h1 {
 	color: #4E9FE3;
+  grid-column: 1 / -1;
 }
 
 #reviews-container ul {
@@ -245,9 +246,12 @@ main {
 	font-weight: bold;
 }
 
-@media screen and (max-widh: 425px) {
+@media screen and (min-width: 425px) {
   #restaurant-container {
-    grid-column: 1 / -1;
+    grid-column: 1 / 2;
+  }
+  #reviews-container {
+  	grid-column: 2 / -1;
   }
 }
 
