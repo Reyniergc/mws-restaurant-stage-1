@@ -14,8 +14,8 @@ You will also need to download Python from [here](https://www.python.org/downloa
 
 Depending on your version run:
 
-Python 2: python -m SimpleHTTPServer 8000
-Python 3: python3 -m http.server 8000
+- Python 2: python -m SimpleHTTPServer 8000
+- Python 3: python3 -m http.server 8000
 
 ### Testing no connectivity
 
