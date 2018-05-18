@@ -25,9 +25,11 @@
     <section id="content-container">
       <div class="filter-options">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <label for="neighborhoods">Select the neighborhood</label>
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-role="listbox">
           <option value="all">All Neighborhoods</option>
         </select>
+        <label for="neighborhoods">Select the type of restaurant</label>
         <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>

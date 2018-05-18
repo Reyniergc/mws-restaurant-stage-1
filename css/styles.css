@@ -121,6 +121,10 @@ main {
 	color: var(--header-color);
 }
 
+.filter-options label {
+	display: none;
+}
+
 @media screen and (min-width: 425px) {
 	.filter-options select {
 		grid-column: span 2;
@@ -199,6 +203,13 @@ main {
 
 /* ================ Restaurant Pages =================*/
 
+#maincontent {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-auto-rows: auto;
+	grid-column-gap: 10px;
+}
+
 #restaurant-container {
 	padding: 10px;
 	background-color: #4E9FE3;
@@ -209,6 +220,13 @@ main {
 #restaurant-container p,
 #restaurant-container table {
 	color: #efefef;
+}
+
+#restaurant-img {
+	width: 460px;
+	max-width: 80%;
+	margin: 0 auto;
+	display: block;
 }
 
 #restaurant-cuisine {
@@ -224,7 +242,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
 }
 
-#reviews-container h1 {
+#reviews-container h2 {
 	color: #4E9FE3;
   grid-column: 1 / -1;
 }
@@ -246,19 +264,51 @@ main {
 	font-weight: bold;
 }
 
-@media screen and (min-width: 425px) {
+#reviews-list {
+	grid-column: 1 / -1;
+	padding: 0;
+}
+
+@media screen and (min-width: 550px) {
   #restaurant-container {
-    grid-column: 1 / 2;
+    grid-column: 1 / 4;
+		font-size: 0.8rem;
   }
+
+	#restaurant-img {
+		grid-column: 1 / 2;
+	}
+
   #reviews-container {
-  	grid-column: 2 / -1;
+  	grid-column: 4 / -1;
+		font-size: 0.8rem;
   }
+	#reviews-list {
+		padding: 0.9em;
+	}
+}
+
+@media screen and (min-width: 460px) {
+	#restaurant-container {
+		grid-column: 1 / 5;
+		font-size: 0.8rem;
+	}
+	#reviews-container {
+		grid-column: 5 / -1;
+		font-size: 0.8rem;
+	}
 }
 
 @media screen and (min-width: 1024px) {
   #reviews-list {
-    grid-column: minmax(2fr, 960px);
+		grid-column: 1 / -1;
+		max-width: 960px;
+		margin: 0 auto;
+		display: block;
   }
+	#reviews-list:first-child {
+		grid-column: 1 / -1;
+	}
 }
 
 /* ================= breadcrumbs ======================*/
