@@ -83,6 +83,9 @@ window.initMap = () => {
     scrollwheel: false
   });
   updateRestaurants();
+  self.map.addListener('idle', () => { // wait for map to load then add the title to the iframe a11y
+    fixMapAria();
+  })
 }
 
 /**
@@ -144,7 +147,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.setAttribute('alt', restaurant.name + ' Featured Image') // add the alt text to the restaurant images
+  image.setAttribute('alt', restaurant.name + ' Featured Image.') // add the alt text to the restaurant images and include the restaurant name
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
@@ -181,4 +184,10 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     });
     self.markers.push(marker);
   });
+}
+
+//fix the title issue with the google maps
+function fixMapAria() {
+  const iframe = document.querySelector('iframe');
+  iframe.title='map of the area';
 }

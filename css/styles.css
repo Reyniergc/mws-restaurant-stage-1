@@ -95,7 +95,7 @@ main {
 
 /* =================== Fileter Options ================*/
 .filter-options {
-	background-color: #4DA0E3;
+	background-color: #0060CC;
 	color: var(--header-color);
 	padding: 20px;
 	grid-column: 1 / -1;
@@ -122,7 +122,7 @@ main {
 }
 
 .filter-options label {
-	display: none;
+  display: none;
 }
 
 @media screen and (min-width: 425px) {
@@ -145,6 +145,24 @@ main {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+}
+
+#footer strong {
+  text-decoration: none;
+  font-weight: bold;
+  color: #efefef
+}
+
+#footer strong>a {
+  text-decoration: none;
+}
+
+#footer strong>a:hover {
+  color: #FF7300;
+}
+
+#footer strong>a:visited {
+  color: #fefefe;
 }
 
 /* ============= Restaurant Reviews =============*/
@@ -204,29 +222,30 @@ main {
 /* ================ Restaurant Pages =================*/
 
 #maincontent {
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-auto-rows: auto;
-	grid-column-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  grid-column-gap: 10px;
 }
 
 #restaurant-container {
 	padding: 10px;
-	background-color: #4E9FE3;
+	background-color: #0060CC;
   grid-column: 1 / -1;
 }
 
 #restaurant-container h1,
 #restaurant-container p,
-#restaurant-container table {
+#restaurant-container tr,
+#restaurant-container td  {
 	color: #efefef;
 }
 
 #restaurant-img {
-	width: 460px;
-	max-width: 80%;
-	margin: 0 auto;
-	display: block;
+  width: 460px;
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
 }
 
 #restaurant-cuisine {
@@ -243,7 +262,7 @@ main {
 }
 
 #reviews-container h2 {
-	color: #4E9FE3;
+	color: #0060CC;
   grid-column: 1 / -1;
 }
 
@@ -265,50 +284,52 @@ main {
 }
 
 #reviews-list {
-	grid-column: 1 / -1;
-	padding: 0;
+  grid-column: 1 / -1;
+  padding: 0;
 }
 
 @media screen and (min-width: 550px) {
   #restaurant-container {
     grid-column: 1 / 4;
-		font-size: 0.8rem;
+    font-size: 0.8rem;
   }
 
-	#restaurant-img {
-		grid-column: 1 / 2;
-	}
+  #restaurant-img {
+    grid-column: 1 / 2;
+  }
 
   #reviews-container {
   	grid-column: 4 / -1;
-		font-size: 0.8rem;
+    font-size: 0.8rem;
   }
-	#reviews-list {
-		padding: 0.9em;
-	}
+
+  #reviews-list {
+    padding: 0.9eml
+  }
 }
 
 @media screen and (min-width: 460px) {
-	#restaurant-container {
-		grid-column: 1 / 5;
-		font-size: 0.8rem;
-	}
-	#reviews-container {
-		grid-column: 5 / -1;
-		font-size: 0.8rem;
-	}
+  #restaurant-container {
+    grid-column: 1 / 5;
+    font-size: 0.8rem;
+  }
+
+  #reviews-container {
+    grid-column: 5 / -1;
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   #reviews-list {
-		grid-column: 1 / -1;
-		max-width: 960px;
-		margin: 0 auto;
-		display: block;
+    grid-column: 1 / -1;
+    max-width: 960px;
+    display: block;
+    margin: 0 auto;
   }
-	#reviews-list:first-child {
-		grid-column: 1 / -1;
-	}
+  #reviews-list:first-child {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ================= breadcrumbs ======================*/
@@ -336,7 +357,7 @@ main {
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #0275d8;
+    color: #0060CC;
     text-decoration: none;
 }
 

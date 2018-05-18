@@ -25,12 +25,12 @@
     <section id="content-container">
       <div class="filter-options">
         <h2>Filter Results</h2>
-        <label for="neighborhoods">Select the neighborhood</label>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-role="listbox">
+        <label for="neighborhoods" id="label-for-neighborhoods">Select the neighborhood</label>
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="label-for-neighborhoods">
           <option value="all">All Neighborhoods</option>
         </select>
-        <label for="neighborhoods">Select the type of restaurant</label>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <label for="neighborhoods" id="label-for-cuisines">Select the type of restaurant</label>
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-labelledby="label-for-cuisines">
           <option value="all">All Cuisines</option>
         </select>
       </div>
@@ -47,10 +47,12 @@
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <script>
+    // service worker registration
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js')
-        .then( () => {
+        .then( reg => {
           console.log('Service Worker Registered Successfully.');
+          console.log(reg);
         })
         .catch( err => {
           console.log('Error Registering Service Worker: ', err);
