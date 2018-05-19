@@ -1,4 +1,4 @@
-const staticCache = 'mws-restaurant-v9.1'; // version 8.1
+const staticCache = 'mws-restaurant-v9.2'; // version 8.1
 const cacheFiles = [
           './',
           './css/styles.css',
@@ -54,70 +54,14 @@ self.addEventListener('activate', evt => {
   )
 })
 
-// intercept and serve requests from cache first if not in cache serve from the server.
-// self.addEventListener('fetch', evt => {
-//   console.log('[ServiceWorker] Service Worker Listening...')
-//   evt.respondWith(
-//     caches.match(evt.request)
-//       .then( response => {
-//         if (response) {
-//           console.log('[ServiceWorker] Cached Resource');
-//           return response;
-//         } else {
-//           console.log('[ServiceWorker] Server Fetch');
-//           return fetch(evt.request);
-//         }
-//       }).catch( err => {
-//         console.log('[ServiceWorker] Error during Fetch: ', err);
-//       })
-//    );
-//   //  evt.waitUntil(
-//   //    fetch(evt.request)
-//   //      .then( response => {
-//   //        console.log(response);
-//   //        location.reload();
-//   //    })
-//   // )
-// })
-
-
 self.addEventListener('fetch', evt => {
   console.log('[ServiceWorker] Service Worker Listening...');
 
   evt.respondWith(
     caches.match(evt.request)
-      .then(response = > {
+      .then(response => {
         if (response) { return response;}
+        return fetch(evt.request);
       })
   );
-  evt.waitUntil(
-    update(evt.request).then(refresh)
-  );
 });
-
-
-function update(request) {
-  return caches.open(staticCache)
-    .then( cache => {
-      return fetch(request)
-        .then( response => {
-          return cache.put(request, response.clone()).then( () => {
-            return response;
-          });
-        });
-    });
-}
-
-function refresh(response) {
-  return self.clients.matchAll()
-    .then( clients => {
-      clients.forEach( client => {
-        var msg = {
-          type: 'refresh',
-          url: response.url,
-          eTag: response.headers.get('ETag')
-        };
-        client.postMessage(JSON.stringify(msg));
-      });
-    });
-}
