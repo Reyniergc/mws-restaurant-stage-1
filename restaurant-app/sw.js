@@ -1,4 +1,4 @@
-const staticCache = 'mws-restaurant-v9.3'; // version 8.1
+const staticCache = 'mws-restaurant-v9.2'; // version 8.1
 const cacheFiles = [
           './',
           './css/styles.css',
@@ -61,7 +61,7 @@ self.addEventListener('fetch', evt => {
     caches.match(evt.request)
       .then(response => {
         if (response) { return response;}
-        return fetch(evt.request)
+        return fetch(evt.request);
       })
   );
 });

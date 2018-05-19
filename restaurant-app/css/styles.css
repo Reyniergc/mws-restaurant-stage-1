@@ -367,14 +367,21 @@ main {
     text-decoration: underline;
 }
 
-/* ===================== a11y =================*/
+/* ===================== Loading =================*/
 
-.skip-link {
-    position: absolute;
-    top: -1000px;
-    left: -1000px;
-    height: 1px;
-    width: 1px;
-    text-align: left;
-    overflow: hidden;
+#loading {
+  background-color: #074481;
+  color: #efefef;
+  position:fixed; /*it can be fixed too*/
+  left:0; right:0;
+  top:0; bottom:0;
+  margin:auto;
+  max-width:100%;
+  max-height:100%;
+  overflow:auto;
+}
+
+#loading h1 {
+  font-size: 3em;
+  font-weight: 300;
 }
