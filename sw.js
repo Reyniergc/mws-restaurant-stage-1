@@ -1,4 +1,4 @@
-const staticCache = 'mws-restaurant-v9.3'; // version 8.1
+const staticCache = 'mws-restaurant-v9.5'; // version 9.5
 const cacheFiles = [
           './',
           './css/styles.css',

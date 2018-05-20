@@ -370,11 +370,14 @@ main {
 /* ===================== a11y =================*/
 
 .skip-link {
-    position: absolute;
-    top: -1000px;
+  	position: absolute;
     left: -1000px;
     height: 1px;
     width: 1px;
     text-align: left;
     overflow: hidden;
+}
+
+.skip-link:focus {
+		2left: 5px;
 }
